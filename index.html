@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=210mm, initial-scale=1" />
+    <title>袁天石 - 简历</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 15mm;
+        }
+        
+        html,
+        body {
+            height: 297mm;
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Noto Sans CJK SC", sans-serif;
+            color: #233;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #fff;
+            padding: 18mm;
+            box-shadow: 0 0 0 0 #fff;
+        }
+        
+        .sheet {
+            width: 100%;
+            max-width: 210mm;
+            min-height: 297mm;
+            padding: 18mm;
+            margin: 0 auto;
+            background: #fff;
+            box-sizing: border-box;
+        }
+        /* Grid */
+        
+        .row {
+            display: flex;
+            gap: 18px;
+        }
+        
+        .col-left {
+            width: 32%;
+            min-width: 220px;
+            box-sizing: border-box;
+            padding: 14px;
+            border-radius: 8px;
+            background: #fbfdfe;
+            border: 1px solid #eef5f7;
+        }
+        
+        .col-right {
+            flex: 1;
+            box-sizing: border-box;
+            padding: 14px;
+        }
+        /* Header / Name */
+        
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 8px;
+        }
+        
+        .photo {
+            width: 100px;
+            height: 125px;
+            border-radius: 4px;
+            background: #eef6f9;
+            border: 1px dashed #cfe9f3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        h1 {
+            font-size: 22pt;
+            margin: 0;
+            color: #1b3a4b;
+        }
+        
+        .meta {
+            font-size: 10.5pt;
+            color: #456;
+            font-weight: 600;
+        }
+        /* Section titles */
+        
+        h2 {
+            font-size: 12pt;
+            margin: 12px 0 8px 0;
+            color: #0f5776;
+            border-left: 4px solid #a7d8e6;
+            padding-left: 8px;
+            background: linear-gradient(90deg, rgba(167, 216, 230, 0.06), rgba(167, 216, 230, 0));
+        }
+        
+        h3 {
+            font-size: 11pt;
+            margin: 6px 0;
+            color: #18506a;
+        }
+        
+        p,
+        li {
+            font-size: 10pt;
+            color: #223;
+        }
+        /* Contact */
+        
+        .contact {
+            font-size: 10pt;
+            line-height: 1.45;
+        }
+        
+        .contact a {
+            color: #0b5f78;
+            text-decoration: none;
+        }
+        /* Education table style (two blocks) */
+        
+        .edu-block {
+            background: #fff;
+            border-radius: 6px;
+            padding: 10px;
+            border: 1px solid #e6f1f4;
+            margin-bottom: 10px;
+        }
+        
+        .edu-time {
+            font-weight: 700;
+            color: #0b6a83;
+        }
+        
+        .edu-school {
+            font-weight: 700;
+            font-size: 11pt;
+        }
+        
+        .gpa {
+            font-weight: 800;
+            color: #0a4a5a;
+        }
+        
+        .course-list {
+            font-size: 9.5pt;
+            color: #2b4b56;
+            margin-top: 6px;
+        }
+        /* Skills bubbles */
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .skill {
+            padding: 6px 10px;
+            border-radius: 18px;
+            background: #eef8f6;
+            border: 1px solid #cdebe6;
+            font-size: 10pt;
+            color: #045a52;
+        }
+        
+        .skill.ai {
+            background: #fff4ea;
+            border-color: #ffd9b3;
+            color: #7a3b00;
+            font-weight: 700;
+        }
+        /* Projects */
+        
+        .project {
+            border-left: 3px solid #d7eef7;
+            padding: 8px 12px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            background: #fbfeff;
+        }
+        
+        .proj-title {
+            font-weight: 700;
+            color: #0b4f63;
+        }
+        
+        .proj-meta {
+            font-size: 9.5pt;
+            color: #3a5a63;
+            margin-top: 4px;
+        }
+        
+        .repo {
+            font-size: 9.5pt;
+            color: #0b6f88;
+            text-decoration: none;
+        }
+        /* Awards */
+        
+        .awards {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        
+        .award {
+            background: #fff8ff;
+            border: 1px solid #f1e6fb;
+            padding: 5px;
+            border-radius: 6px;
+            font-size: 10pt;
+            color: #3b2a5a;
+        }
+        /* Personal evaluation split */
+        
+        .eval {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        
+        .eval p {
+            margin: 6px 0;
+            font-size: 10pt;
+        }
+        /* Print adjustments */
+        
+        .sheet,
+        .col-left,
+        .col-right {
+            page-break-inside: avoid;
+        }
+        
+        .no-print {
+            display: none;
+        }
+        /* Small helper */
+        
+        .muted {
+            color: #6b7b82;
+            font-size: 9.5pt;
+        }
+        /* Responsive smaller screens */
+        
+        @media (max-width:900px) {
+            .row {
+                flex-direction: column;
+            }
+            .col-left {
+                width: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sheet" role="document">
+        <div class="row" style="align-items:flex-start;">
+            <div class="col-left">
+                <div style="display:flex;gap:12px;align-items:flex-start;">
+                    <div class="photo" aria-label="照片容器">
+                        <!-- 替换src为个人照片路径 -->
+                        <img src="photo-placeholder.jpg" alt="QRCODE">
+                    </div>
+                    <div>
+                        <h1 style="font-size:20pt;margin-bottom:6px;">袁天石</h1>
+                        <div class="meta">性别：男 <br> 出生：2004年8月</div>
+                        <div class="meta" style="margin-top:6px;margin-bottom: 30px;">户籍：北京昌平 ~ 政治面貌：群众</div>
+                    </div>
+                </div>
+
+                <h2>联系方式</h2>
+                <div class="contact">
+                    <div>电话：<a href="tel:18710046832">187-1004-6832</a></div>
+                    <div style="margin-bottom: 30px;">邮箱：<a href="mailto:huawei0yylx@gmail.com">huawei0yylx@gmail.com</a></div>
+                </div>
+
+                <h2>专业技能</h2>
+                <div class="skills" aria-label="技能标签">
+                    <span class="skill ai">熟练使用大语言模型与CLI AI编程工具进行项目开发</span>
+                    <span class="skill">Python（网页抓取、数据清洗、数据集处理）</span>
+                    <span class="skill">了解 Vue + SpringBoot（前后端技术栈）</span>
+                    <span class="skill">HTML/CSS/JavaScript 网页</span>
+                    <span class="skill">Linux 基本命令与系统维护</span>
+                    <span class="skill">GitHub / Gitee 开源社区使用</span>
+                    <span class="skill" style="margin-bottom: 30px;">计算机硬件装配与系统安装</span>
+                </div>
+
+                <h2>软件与工具</h2>
+                <div class="muted" style="line-height:1.5;margin-bottom: 30px;">
+                    VSCode · PyCharm · Git · MySQL · Flask · Bootstrap · Springboot · Postman
+                </div>
+
+                <h2>外语能力</h2>
+                <div class="muted">CET-4：411 <br> CET-4 口语：良好</div>
+            </div>
+
+            <div class="col-right">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+                    <div>
+                        <h2 style="margin-top:0;">教育经历</h2>
+                    </div>
+                    <div class="muted" style="text-align:right;">————</div>
+                </div>
+
+                <!-- 专科（先） -->
+                <div class="edu-block" style="margin-bottom:12px;">
+                    <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+                        <div>
+                            <div class="edu-time">2022 — 2024</div>
+                            <div class="edu-school">北京联合大学 · 专科（大数据技术）</div>
+                        </div>
+                        <div style="text-align:right;">
+                            <div class="gpa">GPA：<br><span style="font-size:11pt;">3.90/5</span></div>
+                        </div>
+                    </div>
+                    <div class="course-list">
+                        <strong>主修课程：</strong>互联网数据采集、Linux 系统管理配置、大数据平台配置、网页设计制作、数据仓库应用
+                    </div>
+                </div>
+
+                <!-- 专升本 -->
+                <div class="edu-block">
+                    <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+                        <div>
+                            <div class="edu-time">2024 — 2026</div>
+                            <div class="edu-school">北京联合大学 · 本科（计算机科学与技术）</div>
+                        </div>
+                        <div style="text-align:right;">
+                            <div class="gpa">GPA：<span style="font-size:11pt;">4.05/5</span></div>
+                        </div>
+                    </div>
+                    <div class="course-list">
+                        <strong>主修课程：</strong>Web 开发技术、前端开发技术、数据库原理及应用、软件工程、计算机网络
+                    </div>
+                </div>
+
+                <h2>项目经历</h2>
+
+                <div class="project">
+                    <div class="proj-title">校园违纪与处分管理系统</div>
+                    <div class="proj-meta">
+                        基于 Python Flask + MySQL。功能：违纪信息采集、处理、反馈与查询。用户登录与三类角色（学生 / 教师 / 家长）。前端采用 Bootstrap 响应式布局。负责后端接口与数据库模型设计、UI制作与不同设备效果测试。
+                    </div>
+                    <div style="margin-top:6px;"><a class="repo" href="#" target="_blank">项目仓库地址：xxxxxxxx（暂不可公布）</a></div>
+                </div>
+
+                <div class="project">
+                    <div class="proj-title">科技坊（AI 加持的科技资讯平台）</div>
+                    <div class="proj-meta">
+                        基于 Vue + SpringBoot + MySQL。集成 DeepSeek 大语言模型能力作为文章摘要生成与用户提问功能。功能：文章发布、评论、管理员后台。负责前后端部分联调、 AI 模型接入、参数调优。
+                    </div>
+                    <div style="margin-top:6px;"><a class="repo" href="#" target="_blank">项目仓库地址：xxxxxxxx（暂不可公布）</a></div>
+                </div>
+
+                <h2>获奖经历</h2>
+                <div class="awards">
+                    <div class="award">华北五省及港澳台大学生计算机应用大赛 · 二等奖</div>
+                    <div class="award">全国商业精英挑战赛创新创业竞赛 · 三等奖</div>
+                    <div class="award">全国大学生市场调查与分析大赛 · x 等奖</div>
+                    <div class="award">全国大学生数学建模竞赛（北京市选拔赛） · x 等奖</div>
+                    <div class="award">校级-计算机应用大赛 · 一等奖</div>
+                    <div class="award">校级-网络安全技术大赛 · 三等奖</div>
+                </div>
+
+                <h2>个人评价</h2>
+                <div class="eval" style="margin-top:6px;">
+                    <div>
+                        <h3>职业素养</h3>
+                        <p>办事严谨，逻辑清晰。注重过程文档与代码质量。善于拆解问题并跟踪落地。</p>
+                    </div>
+                    <div>
+                        <h3>能力与态度</h3>
+                        <p>学习能力强，能在短时间掌握新工具。在团队协作中擅长承担接口联调与测试任务。</p>
+                    </div>
+
+                    <div>
+                        <h3>AI 与工程</h3>
+                        <p>对大语言模型有实战经验。能用 CLI 和脚本化方式在项目里引入 AI 能力并完成调优与评估。</p>
+                    </div>
+                    <div>
+                        <h3>发展方向</h3>
+                        <!-- <p>目标：后端工程与AI工程结合，参与产品级 AI 功能落地与运维优化工作。</p> -->
+                    </div>
+                </div>
+
+                <div style="margin-top:14px;font-size:9pt;color:#5b6b71;">
+                    ——————
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
